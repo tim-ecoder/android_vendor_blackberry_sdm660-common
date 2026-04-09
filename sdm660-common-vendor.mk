@@ -169,6 +169,12 @@ PRODUCT_PACKAGES += \
     libkeymasterdeviceutils \
     libkeymasterprovision \
     libkeymasterutils \
+    android.hardware.keymaster@3.0-impl-qti \
+    android.hardware.keymaster@3.0-service-qti \
+    android.hardware.keymaster@4.0-service-qti \
+    android.hardware.gatekeeper@1.0-impl-qti \
+    android.hardware.gatekeeper@1.0-service-qti \
+    libqtikeymaster4 \
     libqcbor \
     libllvm-glnext \
     libllvm-qcom \

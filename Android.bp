@@ -484,7 +484,115 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
-// BB gatekeeper and keymaster impl-qti removed - using software implementations
+// QTI Keymaster 3.0 impl
+cc_prebuilt_library_shared {
+    name: "android.hardware.keymaster@3.0-impl-qti",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/hw/android.hardware.keymaster@3.0-impl-qti.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/hw/android.hardware.keymaster@3.0-impl-qti.so"],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+// QTI Keymaster 3.0 service
+cc_prebuilt_binary {
+    name: "android.hardware.keymaster@3.0-service-qti",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+// QTI Keymaster 4.0 service (PIE9)
+cc_prebuilt_binary {
+    name: "android.hardware.keymaster@4.0-service-qti",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.keymaster@4.0-service-qti"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
+
+// QTI Keymaster 4.0 library (PIE9)
+cc_prebuilt_library_shared {
+    name: "libqtikeymaster4",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/libqtikeymaster4.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libqtikeymaster4.so"],
+        },
+    },
+    compile_multilib: "both",
+    prefer: true,
+    soc_specific: true,
+}
+
+// QTI Gatekeeper 1.0 impl (BB blobs from LOS22)
+cc_prebuilt_library_shared {
+    name: "android.hardware.gatekeeper@1.0-impl-qti",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm: {
+            srcs: ["proprietary/vendor/lib/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
+        },
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl-qti.so"],
+        },
+    },
+    compile_multilib: "both",
+    relative_install_path: "hw",
+    prefer: true,
+    soc_specific: true,
+}
+
+// QTI Gatekeeper 1.0 service
+cc_prebuilt_binary {
+    name: "android.hardware.gatekeeper@1.0-service-qti",
+    owner: "blackberry",
+    strip: { none: true },
+    check_elf_files: false,
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti"],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    relative_install_path: "hw",
+    soc_specific: true,
+}
 
 cc_prebuilt_library_shared {
     name: "sound_trigger.primary.sdm660",
@@ -9775,73 +9883,6 @@ cc_prebuilt_binary {
     },
     compile_multilib: "32",
     check_elf_files: false,
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.gatekeeper@1.0-service-qti",
-    owner: "blackberry",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.gatekeeper@1.0-service-qti",
-            ],
-            shared_libs: [
-                "android.hardware.gatekeeper@1.0",
-                "libhardware",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "libutils",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "android.hardware.keymaster@3.0-service-qti",
-    owner: "blackberry",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/android.hardware.keymaster@3.0-service-qti",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libbase",
-                "libutils",
-                "libhardware_legacy",
-                "libhardware",
-                "libhwbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "android.hardware.keymaster@3.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
     strip: {
         none: true,
     },
