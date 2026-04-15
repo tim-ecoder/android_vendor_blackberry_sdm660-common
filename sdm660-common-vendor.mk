@@ -70,6 +70,10 @@ PRODUCT_COPY_FILES += \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/seccomp_policy/imsrtp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/imsrtp.policy \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/thermal-engine.conf:$(TARGET_COPY_OUT_VENDOR)/etc/thermal-engine.conf \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/xtra_root_cert.pem:$(TARGET_COPY_OUT_VENDOR)/etc/xtra_root_cert.pem \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/gps.prop:$(TARGET_COPY_OUT_VENDOR)/etc/gps.prop \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/xtra_single_boot.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtra_single_boot.conf \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/qdcm_calib_data_Livata_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_Livata_video_mode_dsi_panel.xml \
+    vendor/blackberry/sdm660-common/proprietary/vendor/etc/qdcm_calib_data_Synaptics_video_mode_dsi_panel.xml:$(TARGET_COPY_OUT_VENDOR)/etc/qdcm_calib_data_Synaptics_video_mode_dsi_panel.xml \
     vendor/blackberry/sdm660-common/proprietary/vendor/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a225_pfp.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a225_pfp.fw \
     vendor/blackberry/sdm660-common/proprietary/vendor/firmware/a225_pm4.fw:$(TARGET_COPY_OUT_VENDOR)/firmware/a225_pm4.fw \
@@ -458,7 +462,8 @@ PRODUCT_PACKAGES += \
     xtra-daemon \
     xtwifi-client \
     xtwifi-inet-agent \
-    dpmd
+    dpmd \
+    trace_util
 
 PRODUCT_PACKAGES += \
     system_ext_priv-app_ims_lib_arm64_libimscamera_jni_so \

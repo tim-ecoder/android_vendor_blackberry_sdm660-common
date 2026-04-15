@@ -10992,3 +10992,21 @@ install_symlink {
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
 }
 
+
+cc_prebuilt_binary {
+    name: "trace_util",
+    owner: "blackberry",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/trace_util",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    soc_specific: true,
+}
