@@ -142,8 +142,6 @@ PRODUCT_PACKAGES += \
     libGLESv2_adreno \
     libQTapGLES \
     libq3dtools_adreno \
-    android.hardware.gatekeeper@1.0-impl-qti \
-    android.hardware.keymaster@3.0-impl-qti \
     sound_trigger.primary.sdm660 \
     vulkan.sdm660 \
     lib-dplmedia \
